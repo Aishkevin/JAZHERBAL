@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-forest font-sans text-cream antialiased;
+  }
+}
+
+@layer components {
+  .display {
+    @apply font-display;
+  }
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.3em] text-gold-soft;
+  }
+  .btn-gold {
+    @apply inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-wider text-forest transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_30px_-10px_rgba(201,164,75,0.6)];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-full border border-cream/25 px-7 py-3.5 text-[13px] font-semibold uppercase tracking-wider text-cream transition-colors duration-300 hover:border-cream/60;
+  }
+}
+
+/* Hero pointer-reveal effect (values are set as CSS custom properties from useHeroPointer.js) */
+.hero-reveal {
+  -webkit-mask-image: radial-gradient(circle var(--r, 200px) at var(--lx, 50%) var(--ly, 50%), black 55%, transparent 100%);
+  mask-image: radial-gradient(circle var(--r, 200px) at var(--lx, 50%) var(--ly, 50%), black 55%, transparent 100%);
+}
+
+.hero-glow {
+  background: radial-gradient(circle var(--or, 120px) at var(--ox, 50%) var(--oy, 50%), rgba(227, 205, 154, 0.35), transparent 70%);
+}
+
+.parallax {
+  transform: translate3d(calc(var(--px, 0) * var(--depth, 0) * 1px), calc(var(--py, 0) * var(--depth, 0) * 1px), 0);
+  will-change: transform;
+}
+
+::selection {
+  background: #C9A44B;
+  color: #0B1F16;
+}
